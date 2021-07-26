@@ -1,2 +1,2 @@
-import joke_generator as joke
-print(joke.generate())
+# import joke_generator as joke
+# print(joke.generate())
