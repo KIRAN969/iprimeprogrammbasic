@@ -13,7 +13,8 @@ while(1):
     print("1.add employee:")
     print("2.view employee:")
     print("3.search employee:")
-    print("4.exit:")
+    print("4.update employee:")
+    print("5.exit:")
     option=int(input("enter your choice:"))
     if option==1:
         name=input("enter the name:")
@@ -30,11 +31,20 @@ while(1):
         result=collection_name.find()
         for i in result:
             employeefetchlist.append(i)
-        print(i)
+        print(employeefetchlist)
 
     if option==3:
-        result=collection_name.find({"name":kiran})
+        result=collection_name.find({"name":"kiran"})
+        for i in result:
+            print(i)
 
+    if option==4:
+        names=input("enter the name you have to update:")
+        addresses=input("enter the address:")
+        designations=input("enter the designation:")
+        result=collection_name.update_one({"name":names},{"$set":{"address":addresses,"designation":designations}})
+        print(result)
+        
     if option==4:
         break
         
